@@ -1,0 +1,38 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+public/favicon.ico
+public/icon.svg
+src/assets/hero.png
+src/assets/react.svg
+src/assets/vite.svg
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Files generated during coding
+*copy*
+src/*copy*
+src/components/*copy*
+src/context/*copy*
+src/data/*copy*
+src/pages/*copy*
+src/reducers/*copy*
