@@ -113,6 +113,8 @@ index.html                  # Root entry point
 **Saturday, 8 August 2026**
 
 **Friday, 7 August 2026**
+1. No work done; Unable to work on Step 1 (Router) as stipulated in [Refactoring Strategy for React Router, Context and Reducers](https://github.com/odeanowl-yahoo-com-sg-gh/task-manager#refactoring-strategy-for-react-router-context-and-reducers)
+2. Learn to work with Git and GitHub in WSL to push repository with differing GitHub account
 
 **Thursday, 6 August 2026**
 1. Port over Figma TypeScript Tailwind CSS as-is to JavaScript, JavaScript XML. 
@@ -127,7 +129,7 @@ index.html                  # Root entry point
         * `index.css`
 2. Next Steps
     - Edit
-        * `App.jsx`
+        * `App.jsx` for React Routing
     - Create:
         * `NotFoundPage.jsx`
         * `TaskListPage.jsx`
@@ -145,6 +147,8 @@ If my 'enlightenment' of React came earlier, I might have time to develop test c
 Task Manager can be another item with Customers in the Simple CRM Web. It could share the same `<Outlet />` in the `<Sidebar>` in the `<RootLayout />`. I would like to do that if I have an opportunity and time.
 
 Data is an array for simplicity in order to understand React. Working with an backend database server is the next exciting challenge!
+
+There are at least three additional data fields which allows for further practice on React, especially when combine with the Simple CRM Web.
 
 ## `App.jsx` Version History (Reverse Version Number Order)
 * **`App copy 6.jsx`**:
