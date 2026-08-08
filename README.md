@@ -2,7 +2,15 @@
 
 ## Log (Reverse Choronological Order)
 
-**Monday, 3 August 2026** - **Present**: Develop Task Manager Architecture, refactored TypeScript and Tailwind CSS for JavaScript and JavaScript XML.
+**Saturday, 8 August 2026**: Progress is slow... Context API and Reducers understanding is elusive... Initial thoughts of completing React Routing quick is beginning to disappoint... See [Task History](https://github.com/odeanowl-yahoo-com-sg-gh/task-manager#task-history-reverse-chronological-order)
+
+**Friday, 7 August 2026**: Submit JavaScript and JavaScript XML refactored codebase, but no React Router, Context API and Reducer. Learned Git and GitHub on-the-go.
+
+**Thursday, 6 August 2026**,
+**Wednesday, 5 August 2026**,
+**Tuesday, 4 August 2026**: Refactored TypeScript and Tailwind CSS prototpye for JavaScript and JavaScript XML.
+
+**Monday, 3 August 2026**: Develop Task Manager Architecture.
 
 **Saturday, 1 August 2026**: After the MCQs assessment, Something ticked, confident boost to work with GenAI, though it is still touch and go but I was beginning to be aware where things are. Lesson 6 and Lesson 8 were important. Google NotebookLM was instrumental to achieve this.
 
@@ -111,10 +119,10 @@ index.html                  # Root entry point
 ### Task History (Reverse Chronological Order)
 
 **Saturday, 8 August 2026**
+Unable to proceed with the next steps planned on Thursday, 6 August 2026. Try to nderstand how `TaskListPage.jsx` fit into Context API and Reducer; need to understand this before any coding. Refactored codebases are more difficult to fix because of the reluctance to 'break code'... React Routing should be easily completed because of the same reason
 
 **Friday, 7 August 2026**
-1. No work done; Unable to work on Step 1 (Router) as stipulated in [Refactoring Strategy for React Router, Context and Reducers](https://github.com/odeanowl-yahoo-com-sg-gh/task-manager#refactoring-strategy-for-react-router-context-and-reducers)
-2. Learn to work with Git and GitHub in WSL to push repository with differing GitHub account
+No work done; Unable to work on Step 1 (Router) as stipulated in [Refactoring Strategy for React Router, Context and Reducers](https://github.com/odeanowl-yahoo-com-sg-gh/task-manager#refactoring-strategy-for-react-router-context-and-reducers)
 
 **Thursday, 6 August 2026**
 1. Port over Figma TypeScript Tailwind CSS as-is to JavaScript, JavaScript XML. 
@@ -139,16 +147,13 @@ index.html                  # Root entry point
 ## Regrets!
 
 **React Test Cases**
-
 If my 'enlightenment' of React came earlier, I might have time to develop test cases. Currently, I might have to review the lecture notes in order to achieve this. This would be in future plans. Perhaps it is wise to develop with TDD methodology. However, it is still difficult to achieve this when understaking a new language.
 
 ## Future Plans
 
-Task Manager can be another item with Customers in the Simple CRM Web. It could share the same `<Outlet />` in the `<Sidebar>` in the `<RootLayout />`. I would like to do that if I have an opportunity and time.
+**Task Manager** can be another item with Customers in the Simple CRM Web. It could share the same `<Outlet />` in the `<Sidebar>` in the `<RootLayout />`. I would like to do that if I have an opportunity and time.
 
-Data is an array for simplicity in order to understand React. Working with an backend database server is the next exciting challenge!
-
-There are at least three additional data fields which allows for further practice on React, especially when combine with the Simple CRM Web.
+**Data of Task Manager** is an array for simplicity in order to understand React. Working with an backend database server is the next exciting challenge! There are at least three additional data fields which allows for further practice on React, especially when combine with the Simple CRM Web.
 
 ## `App.jsx` Version History (Reverse Version Number Order)
 * **`App copy 6.jsx`**:
@@ -169,7 +174,8 @@ There are at least three additional data fields which allows for further practic
     - Data reload on F5
     - Persist list of tasks survive Task Detail Page reload
 * **`App copy 3.jsx`**: 
-    - Port over from Figma TypeScript Tailwind CSS
+    - Germini & Copilot
+    - Port over from Figma TypeScript Tailwind CSS prototype
     - No F5
     - No Ctrl r (or Ctrl R)
 * **`App copy 2.jsx`**:
