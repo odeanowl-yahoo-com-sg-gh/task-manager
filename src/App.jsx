@@ -8,6 +8,8 @@ import Header from "./components/Header"
 let nextId = 100
 
 export default function App() {
+  const thisVersion = "Version 4"
+
   // =========================================================================
   // HIGHLIGHT: Reload initialTasks on Browser Refresh / F5
   // =========================================================================
@@ -82,7 +84,7 @@ export default function App() {
       className="flex flex-col h-screen overflow-hidden bg-white"
       style={{ fontFamily: "'Inter', system-ui, sans-serif" }}
     >
-      <Header codeVersion="Version 4"/>
+      <Header codeVersion={thisVersion}/>
 
       <div className="flex flex-1 overflow-hidden">
         {/* Left panel — list */}
