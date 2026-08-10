@@ -2,6 +2,9 @@
 
 ## Log (Reverse Choronological Order)
 
+**Sunday, 9 August 2026**
+Review and stock take of progress. Plan recalibration steps for Gemini with Gemini.
+
 **Saturday, 8 August 2026**: Progress is slow... Context API and Reducers understanding is elusive... Initial thoughts of completing React Routing quick is beginning to disappoint... See [Task History](https://github.com/odeanowl-yahoo-com-sg-gh/task-manager#task-history-reverse-chronological-order)
 
 **Friday, 7 August 2026**: Submit JavaScript and JavaScript XML refactored codebase, but no React Router, Context API and Reducer. Learned Git and GitHub on-the-go.
