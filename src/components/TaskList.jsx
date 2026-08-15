@@ -1,4 +1,4 @@
-// src/components/RowList.jsx
+// src/components/RowList.jsx (Refactored from RowList.tsx) (App.jsx Version 4)
 import StatusBadge from './StatusBadge'
 import PriorityBadge from './PriorityBadge'
 import AddTaskForm from './AddTaskForm'
@@ -12,8 +12,12 @@ function FilterBar({ filter, onFilterChange, visibleCount, totalCount }) {
     // HIGHLIGHT: Updated to Tailwind v4 shorthand for CSS variable usage.
     <div className="px-5 pt-5 pb-4 border-b border-(--border)">
       <div className="flex items-baseline justify-between mb-4">
-        <h1 className="text-lg font-semibold tracking-tight">Task List</h1>
-        <span className="text-xs text-zinc-400" style={{ fontFamily: "'DM Mono', monospace" }}>
+        <h1 className="text-lg font-semibold tracking-tight">
+          Task List
+        </h1>
+        <span className="text-xs text-zinc-400" 
+          style={{ fontFamily: "'DM Mono', monospace" }}
+        >
           {visibleCount} / {totalCount}
         </span>
       </div>
@@ -22,11 +26,20 @@ function FilterBar({ filter, onFilterChange, visibleCount, totalCount }) {
       <div className="flex gap-1.5 flex-wrap">
         <button
           onClick={() => onFilterChange('all')}
-          className={`px-3 py-1.5 text-xs font-medium rounded-sm border transition-colors uppercase ${
-            filter === 'all'
-              ? 'bg-zinc-900 text-white border-zinc-900'
-              : 'bg-white text-zinc-600 border-zinc-200 hover:border-zinc-400'
-          }`}
+          className={`
+            px-3 
+            py-1.5 
+            text-xs 
+            font-medium 
+            rounded-sm border 
+            transition-colors 
+            uppercase 
+            ${
+              filter === 'all'
+                ? 'bg-zinc-900 text-white border-zinc-900'
+                : 'bg-white text-zinc-600 border-zinc-200 hover:border-zinc-400'
+            }`
+          }
           style={{ fontFamily: "'DM Mono', monospace" }}
         >
           All
@@ -35,11 +48,21 @@ function FilterBar({ filter, onFilterChange, visibleCount, totalCount }) {
           <button
             key={s}
             onClick={() => onFilterChange(s)}
-            className={`px-3 py-1.5 text-xs font-medium rounded-sm border transition-colors uppercase ${
-              filter === s
-                ? 'bg-zinc-900 text-white border-zinc-900'
-                : 'bg-white text-zinc-600 border-zinc-200 hover:border-zinc-400'
-            }`}
+            className={`
+              px-3 
+              py-1.5 
+              text-xs 
+              font-medium 
+              rounded-sm 
+              border 
+              transition-colors 
+              uppercase 
+              ${
+                filter === s
+                  ? 'bg-zinc-900 text-white border-zinc-900'
+                  : 'bg-white text-zinc-600 border-zinc-200 hover:border-zinc-400'
+              }`
+            }
             style={{ fontFamily: "'DM Mono', monospace" }}
           >
             {s.replace('-', ' ')}
@@ -55,15 +78,26 @@ function TaskCard({ record, isSelected, onSelect, onDelete }) {
   return (
     <div
       onClick={() => onSelect(record.id)}
-      className={`relative px-5 py-4 border-b border-(--border) cursor-pointer transition-colors ${
-        isSelected
-          ? 'bg-indigo-50 border-l-2 border-l-indigo-500'
-          : 'hover:bg-zinc-50 border-l-2 border-l-transparent'
-      }`}
+      className={`
+        relative 
+        px-5 
+        py-4 
+        border-b 
+        border-(--border) 
+        cursor-pointer 
+        transition-colors 
+        ${
+          isSelected
+            ? 'bg-indigo-50 border-l-2 border-l-indigo-500'
+            : 'hover:bg-zinc-50 border-l-2 border-l-transparent'
+        }`
+      }
     >
       <div className="flex items-start justify-between gap-3">
         <div className="flex-1 min-w-0">
-          <p className="text-sm font-medium text-zinc-900 truncate mb-2">{record.title}</p>
+          <p className="text-sm font-medium text-zinc-900 truncate mb-2">
+            {record.title}
+          </p>
           <div className="flex items-center gap-2 flex-wrap">
             <StatusBadge status={record.status} />
             <PriorityBadge priority={record.priority} />
@@ -71,11 +105,26 @@ function TaskCard({ record, isSelected, onSelect, onDelete }) {
         </div>
         <button
           onClick={e => { e.stopPropagation(); onDelete(record.id) }}
-          className="shrink-0 w-7 h-7 flex items-center justify-center rounded-sm text-zinc-400 hover:text-rose-500 hover:bg-rose-50 transition-colors"
+          className="
+            shrink-0 
+            w-7 
+            h-7 
+            flex 
+            items-center 
+            justify-center 
+            rounded-sm
+            text-zinc-400
+            hover:text-rose-500
+            hover:bg-rose-50 transition-colors"
           title="Delete task"
         >
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-            <path d="M1 1l10 10M11 1L1 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+            <path 
+              d="M1 1l10 10M11 1L1 11" 
+              stroke="currentColor" 
+              strokeWidth="1.5" 
+              strokeLinecap="round"
+            />
           </svg>
         </button>
       </div>
