@@ -2,10 +2,20 @@
 
 ## Log (Reverse Choronological Order)
 
-**Sunday, 9 August 2026**
-Review and stock take of progress. Plan recalibration steps for Gemini with Gemini.
+**Saturday, 15 August 2026** (3 hours): Start build.
+Branch from `main`. Git on WSL, Project on Windows -- Challenging!
 
-**Saturday, 8 August 2026**: Progress is slow... Context API and Reducers understanding is elusive... Initial thoughts of completing React Routing quick is beginning to disappoint... See [Task History](https://github.com/odeanowl-yahoo-com-sg-gh/task-manager#task-history-reverse-chronological-order)
+**Friday, 14 August 2026** (2 hours),
+**Thursday, 13 August 2026** (4 hours)
+**Wednesday, 12 August 2026** (2 hours),
+**Tuesday, 11 August 2026** (2 hours),
+**Monday, 10 August 2026** (2 hours),
+**Sunday, 9 August 2026** (8 hours): Review and stock take of progress.
+Plan recalibration steps for Gemini with Gemini.
+Gemini was 'confused' between prop drilling method and React Router method.
+
+**Saturday, 8 August 2026** (3 hours): Progress is slow... 
+Context API and Reducers understanding is elusive... Initial thoughts of completing React Routing quick is beginning to disappoint... See [Task History](https://github.com/odeanowl-yahoo-com-sg-gh/task-manager#task-history-reverse-chronological-order)
 
 **Friday, 7 August 2026**: Submit JavaScript and JavaScript XML refactored codebase, but no React Router, Context API and Reducer. Learned Git and GitHub on-the-go.
 
@@ -15,9 +25,11 @@ Review and stock take of progress. Plan recalibration steps for Gemini with Gemi
 
 **Monday, 3 August 2026**: Develop Task Manager Architecture.
 
-**Saturday, 1 August 2026**: After the MCQs assessment, Something ticked, confident boost to work with GenAI, though it is still touch and go but I was beginning to be aware where things are. Lesson 6 and Lesson 8 were important. Google NotebookLM was instrumental to achieve this.
+**Saturday, 1 August 2026**: After the MCQs assessment, Something ticked, confident boost to work with GenAI, though it is still touch and go but I was beginning to be aware where things are. 
+Lesson 6 and Lesson 8 were important. Google NotebookLM was instrumental to achieve this.
 
-**Saturday, 29 July 2026**: Pick up where I left off on Thursday, 9 July 2026. Worked with Google Gemini in an attempt to move forward...
+**Saturday, 29 July 2026**: Pick up where I left off on Thursday, 9 July 2026.
+Worked with Google Gemini in an attempt to move forward...
 
 **Thursday, 9 July 2026**: In a way, the assignment presumes a working prototype that could be refactored for React Router, Reducer and Context. CSS was a bigger concern I had than understanding the lectures and the quirky ways of React, JavaScript and XML. It prompted to search for alternatives so that I could focus on coding. Figma caught my attention after several prompts with Google Gemini, including open source CSS design platforms such as v0, Penpot, Plasmic/UXPin. However, Figma worked with TypeScript and Tailwind CSS, and its source code complexity was higher than the lecture materials. I left everything as-is...
 
@@ -62,7 +74,7 @@ CTCR: Context of Module 2 Assignment Core Requirement
 DATA: Data for Module 2 Assignment
 RCR: Reducer of Module 2 Assignment Core Requirement
 
-```
+```plaintext
 index.html                  # Root entry point
 └── src/
  ├── main.jsx               # Mounts 
