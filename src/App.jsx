@@ -1,113 +1,48 @@
-// src/App.jsx (Version 4)
-import { useState, useEffect } from "react"
-import { initialTasks } from "./data/initialTasks"
-import TaskList from "./components/TaskList"
-import TaskDetailPage from "./pages/TaskDetailPage"
-import Header from "./components/Header"
+/**
+ * @file App.jsx
+ * @description Main application entry point setting up global context providers,
+ * header shell, and React Router page navigation routes.
+ */
 
-let nextId = 100
+import React from 'react';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+
+import { TaskProvider } from './contexts/TaskContext';
+import Header from './components/Header';
+import TaskListPage from './pages/TaskListPage';
+import NotFoundPage from './pages/NotFoundPage';
 
 export default function App() {
-  const thisVersion = "Version 4"
-
-  // =========================================================================
-  // HIGHLIGHT: Reload initialTasks on Browser Refresh / F5
-  // =========================================================================
-  useEffect(() => {
-    // 1. Check if the page entry type was a reload
-    const navEntries = performance.getEntriesByType('navigation')
-    const isReload = navEntries.length > 0 && navEntries[0].type === 'reload'
-
-    if (isReload) {
-      // Re-initialize localStorage back to seed initialTasks on refresh
-      localStorage.setItem("tasks", JSON.stringify(initialTasks))
-    }
-
-    // 2. Intercept F5 / Ctrl+R / Cmd+R keys to reset data before page reloads
-    const handleKeyDown = (e) => {
-      if (
-        e.key === "F5" || 
-        ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "r")
-      ) {
-        localStorage.setItem("tasks", JSON.stringify(initialTasks))
-      }
-    }
-
-    window.addEventListener("keydown", handleKeyDown)
-    return () => window.removeEventListener("keydown", handleKeyDown)
-  }, [])
-  // =========================================================================
-
-  // Local state initialized with localStorage fallback or initialTasks seed data
-  const [records, setRecords] = useState(() => {
-    // HIGHLIGHT: If page was reloaded, read the freshly reset seed data
-    const saved = localStorage.getItem("tasks")
-    return saved ? JSON.parse(saved) : initialTasks
-  })
-  
-  const [selectedId, setSelectedId] = useState(null)
-  const [filter, setFilter] = useState("all")
-
-  // Sync state to localStorage during standard active user interactions
-  useEffect(() => {
-    localStorage.setItem("tasks", JSON.stringify(records))
-  }, [records])
-
-  // Selected record calculation
-  const selected = records.find((r) => String(r.id) === String(selectedId)) ?? null
-
-  // Handler: Add Task
-  const handleAdd = (data) => {
-    const id = ++nextId
-    const created = new Date().toISOString().slice(0, 10)
-    const newRecord = { id, created, ...data }
-    
-    setRecords((prev) => [newRecord, ...prev])
-    setSelectedId(id)
-  }
-
-  // Handler: Delete Task
-  const handleDelete = (id) => {
-    setRecords((prev) => prev.filter((r) => String(r.id) !== String(id)))
-    if (String(selectedId) === String(id)) setSelectedId(null)
-  }
-
-  // Handler: Change Task Status
-  const handleStatusChange = (id, status) => {
-    setRecords((prev) =>
-      prev.map((r) => (String(r.id) === String(id) ? { ...r, status } : r))
-    )
-  }
+  const currentVersion = 'Ver. 5';
 
   return (
-    <div
-      className="flex flex-col h-screen overflow-hidden bg-white"
-      style={{ fontFamily: "'Inter', system-ui, sans-serif" }}
-    >
-      <Header codeVersion={thisVersion}/>
+    <TaskProvider>
+      <BrowserRouter>
+        <div className="min-h-screen bg-slate-50 text-slate-800 flex flex-col font-sans">
+          {/* Header Shell */}
+          <Header codeVersion={currentVersion} />
 
-      <div className="flex flex-1 overflow-hidden">
-        {/* Left panel — list */}
-        <div className="w-80 shrink-0 flex flex-col h-full border-r border-(--border)]">
-          <TaskList
-            records={records}
-            selectedId={selectedId}
-            filter={filter}
-            onFilterChange={setFilter}
-            onSelect={setSelectedId}
-            onDelete={handleDelete}
-            onAdd={handleAdd}
-          />
-        </div>
+          {/* Page Route Views */}
+          <main className="flex-1 w-full mx-auto">
+            <Routes>
+              {/* Redirect root '/' to '/tasks' per Blueprint spec */}
+              <Route path="/" element={<Navigate to="/tasks" replace />} />
 
-        {/* Right panel — detail */}
-        <div className="flex-1 flex flex-col h-full overflow-hidden">
-          <TaskDetailPage
-            record={selected}
-            onStatusChange={handleStatusChange}
-          />
+              {/* Task list and active task detail routes */}
+              <Route path="/tasks" element={<TaskListPage />} />
+              <Route path="/tasks/:id" element={<TaskListPage />} />
+
+              {/* 404 Fallback Route */}
+              <Route path="*" element={<NotFoundPage />} />
+            </Routes>
+          </main>
+
+          {/* Footer */}
+          <footer className="border-t border-slate-200 py-3 text-center text-xs text-slate-400 font-mono bg-white">
+            Task Manager {currentVersion} • Built with React, Context API &amp; React Router
+          </footer>
         </div>
-      </div>
-    </div>
-  )
+      </BrowserRouter>
+    </TaskProvider>
+  );
 }

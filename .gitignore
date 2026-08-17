@@ -32,7 +32,8 @@ src/assets/vite.svg
 *copy*
 src/*copy*
 src/components/*copy*
-src/context/*copy*
+src/contexts/*copy*
 src/data/*copy*
 src/pages/*copy*
 src/reducers/*copy*
+src/utils/*copy*
